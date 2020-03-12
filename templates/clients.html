@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ url_for('ultimos5')}}">Home</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+    </ol>
+</nav>
+<div>
+  <a class="btn btn-warning btn-lg" href="{{ url_for('add_cli')}}" role="button">Crear Cliente</a>
+</div>
+<div>
+	
+	<table>
+	    <tr>
+	        <th>NOMBRE DE CLIENTE</th>
+	        <th>N° TELEFONO</th>
+	        <th>EMAIL</th>
+	        <th>DIRECCION</th>
+	        <th>TIPO CONTRATO</th>
+	        <th>CONTACTO</th>
+	        <th>FECHA DE CREACIÓN</th>
+	        <th>ACCIONES</th>
+	    </tr>
+	    <tr>
+	    	{% for client in clients %}
+	        <td>{{ client.nombre }}</td>
+	        <td>{{ client.telefono }}</td>
+	        <td>{{ client.email }}</td>
+	        <td>{{ client.direccion}}</td>
+	        <td>{{ client.tipo_contrato }}</td>
+	        <td>{{ client.tipo_contacto }}</td>
+	        <td>{{ client.fecha_creacion }}</td>
+	        <td>
+				
+				{% if usuario.rol == 'Administrador' %}
+	        	<a class="button" title="Eliminar" href='/clientes/eliminar/{{client.id}}'>
+				<i class="fa fa-trash-o fa-fw"></i>
+				</a>
+	        	<a class="button" title="Editar" href="/clientes/editar/{{client.id}}">
+				<i class="fa fa-pencil fa-fw"></i>
+				</a>
+				{% else %}
+					{% if session['username'] == client.userid %}
+						<a class="button" title="Editar" href="/clientes/editar/{{client.id}}">
+						<i class="fa fa-pencil fa-fw"></i>
+					{%endif%}
+
+				{%endif%}
+	        </td>
+	        
+	    </tr>
+	    {% endfor %}
+	</table>
+</div>
+{% endblock %}

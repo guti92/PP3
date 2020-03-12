@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+
+  
+  <div class="row text-center">
+    <h2>¿Está seguro que quiere borrar este Cliente?</h2>
+  </div>
+  <div class="row post">
+      <div class="col-md-12">
+        <p>{{cliente.nombre}}</p>
+      </div>
+        
+  </div>
+
+  <br>
+ 
+  <form action="/clientes/eliminar/{{cliente.id}}" method = 'post'>
+    <button type="submit" class="btn btn-danger" id="submit" type="submit">Yes</button>
+    <a class="btn btn-primary" href="/clientes" role="button">No</a>
+  </form>  
+ 
+  
+
+{% endblock %}

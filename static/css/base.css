@@ -1,0 +1,97 @@
+ /** {
+    border: 1px solid black;
+
+}*/
+
+body{
+	background-color: #bdc3c7;
+	border: 1px solid black;
+	
+}
+
+header {
+	background:#4286f4;
+	color: black;
+	text-align: center;
+	padding: 15px;
+
+}
+
+
+.caja { 
+color: #ffffff; 
+font-size: 18px; 
+font-weight: 400; 
+align-items:  center; 
+background: #889ccf; 
+margin: 0 0 25px; 
+overflow: hidden; 
+padding: 20px; 
+border-radius: 35px 0px 35px 0px; 
+-moz-border-radius: 35px 0px 35px 0px; 
+-webkit-border-radius: 35px 0px 35px 0px; 
+border: 2px solid #5878ca;
+width: 25%}
+
+
+}
+
+
+h4 {
+	color: solid black;
+}
+
+aside{
+	background: #c0392b;
+	color:#fff;
+}
+
+#menu{
+	height: 100%;
+	min-height: 84vh;
+}
+
+#data{
+	height: 100%;
+	min-height: 84vh;
+	background-color: #bdc3c7;
+}
+#footer {
+	background-color: #4286f4;
+	text-align : right;
+	height: 35px;
+}
+
+a {
+	color: black;
+}
+
+.btn{
+	width: 100%;
+	margin-bottom: 24px;
+	margin-top: 24px;
+	border: 2px solid black;
+
+}
+
+.lista {
+	width: 100%;
+	font-size: 16px;
+	padding: 10px;
+}
+
+table {
+		    font-family: arial, sans-serif;
+		    border: 1px solid black;
+		    width: 100%;
+		}
+
+td, th {
+		    border: 1px solid black;
+		    text-align: center;
+		    padding: 8px;
+		}
+
+tr:nth-child(even) {
+		    background-color: #4286f4;
+		}

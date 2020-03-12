@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--
+<p >
+	<table>
+		<tr>
+			<th>NOMBRE DE CLIENTE</th>
+			<th>FECHA DE CREACIÓN</th>
+		</tr>
+		<tr>
+			{% for ultimo in ultimos %}
+			<td>{{ ultimo.nombre }}</td>
+			<td>{{ ultimo.fecha_creacion }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</p>-->
+<h4>Ultimos 5 clientes creados:</h4>
+<ol class="caja">
+	{% for ultimo in ultimos %}
+	<li>{{ ultimo.nombre }} </li>
+	{% endfor %}
+</ol>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url_for('ultimos5')}}">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cambiar Contraseña</li>
+        </ol>
+      </nav>
+      <form method="post">
+        <input type="password" class="form-control" name="password" placeholder="Nueva contraseña">
+        <br>
+        <input type="password" class="form-control" name="repeat-password" placeholder="Repetir nueva contraseña">
+        <br>
+        <button type="submit">Guardar</button>
+      </form>
+          {% if error%}
+          <h3>{{error}}</h3>
+          {% endif %}
+    </div>
+  </div>
+{% endblock %}

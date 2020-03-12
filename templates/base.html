@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tecnosys</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+	<!-- CSS Personalizado -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+</head>
+<body>
+	<header>
+		<div  class="container-fluid d-flex flex-column">
+			<div class="main row">
+				<div class="col-md-4">
+					Bienvenido {{usuario.username}}
+				</div>
+				<div class="col-md-4">
+					<h1><a href="{{ url_for('ultimos5')}}">Tecnosys</a></h1>
+				</div>
+				<div class="col-md-4">
+					Servicio Técnico Guti
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<hr>
+
+	<div id="menu" class="container-fluid d-flex flex-column">
+		
+		<div class="row">
+			<article class="col-md-2" >
+				
+				<div id='menuboton' >
+					{% if usuario.rol == 'Administrador' %}
+					<div>
+					  <a class="btn btn-warning btn-lg" href="{{ url_for('users')}}" role="button">Usuarios</a>
+					</div>
+					{%endif%}
+					<div>
+					  <a class="btn btn-warning btn-lg" href="{{ url_for('clients')}}" role="button">Clientes</a>
+					</div>
+					
+					<div>
+											
+					  <a class="btn btn-warning btn-lg" href="{{ url_for('newpass')}}" role="button">Cambiar Contraseña</a>
+					</div>
+					
+
+					<div>
+					  <a class="btn btn-warning btn-lg" href="{{ url_for('logout')}}" role="button">Cerrar Sesión</a>
+					</div>
+				</div>
+			</article>
+
+			<aside id="data" class="col-md-10">
+				{% block content %}	
+				{% endblock %}
+			</aside>
+		</div>
+	</div>
+		<div id="footer" class="container-fluid">
+		<!--<div class="footer fixed-bottom">-->
+			<a  href="https://www.facebook.com/Servicio-t%C3%A9cnico-Guti-826425844369808/"><strong>Contacto</strong></a>
+		</div>
+	
+</body>
+</html>

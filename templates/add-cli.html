@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url_for('ultimos5')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ url_for('clients')}}">Clientes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Crear Cliente</li>
+        </ol>
+      </nav>
+      <h2>Crear Cliente</h2>
+      <form method="post">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre completo o Razón Social">
+        <br>
+        <input type="text" class="form-control" name="telefono" placeholder="Número de Teléfono">
+        <br>
+        <input type="text" class="form-control" name="tipo_contacto" placeholder="Forma en que nos encontró">
+        <br>
+        <input type="text" class="form-control" name="direccion" placeholder="Dirección">
+        <br>
+        <input type="text" class="form-control" name="email" placeholder="Email">
+        <br>
+        <select class="lista" name="tipo_contrato" required="">
+          <option value="" disabled selected>Tipo de Contrato</option>
+          <option value="Abonado">Abonado</option>
+          <option value="Particular">Particular</option>
+        </select>
+        <!--<input type="text" class="form-control" name="tipo_contrato" placeholder="Cliente abonado o particular">-->
+        <br>
+        <br>
+
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ url_for('ultimos5')}}">Home</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Usuarios</li>
+    </ol>
+</nav>
+<div>
+  <a class="btn btn-warning btn-lg" href="{{ url_for('registrar')}}" role="button">Crear Usuario</a>
+</div>
+<div>
+	
+	<table>
+	    <tr>
+	        <th>NOMBRE DE USUARIO</th>
+	        <th>TIPO DE USUARIO</th>
+	        <th>FECHA DE CREACIÓN</th>
+	        <th>ACCIONES</th>
+	    </tr>
+	    <tr>
+	    	{% for user in users %}
+	        <td>{{ user.username }}</td>
+	        <td>{{ user.rol }}</td>
+	        <td>{{ user.fecha_creacion_u }}</td>
+	        
+	        <td>
+
+	        	<a class="button" title="Eliminar" href='/usuarios/eliminar/{{user.id}}'>
+				<i class="fa fa-trash-o fa-fw"></i>
+				</a>
+	        	<a class="button" title="Editar" href='/usuarios/editar/{{user.id}}'>
+				<i class="fa fa-pencil fa-fw" ></i>
+				</a>
+	        </td>
+	    </tr>
+	    {% endfor %}
+	</table>
+	
+</div>
+{% endblock %}

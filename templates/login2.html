@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Login</title>
+	<!-- Bootstrap -->
+	<link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+	<!-- CSS Personalizado -->
+	<link href="{{ url_for('static', filename='css/login2.css') }}" rel="stylesheet">
+
+</head>
+<body>
+	
+	<div class="container p-5">
+		<h1 class="display-4 text-center mt-4">Tecnosys</h1>
+		<br>
+		<form method="post">
+      
+	      <div class="form-signin">
+
+	        <div class="input-group">
+	          <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+	          <input  name="username" class="form-control" type="text" placeholder="Usuario" required autofocus>
+	        </div>
+
+	        <div class="input-group">
+	          <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+	          <input  name="password" class="form-control" type="password" placeholder="Contraseña" required autofocus>
+	        </div>
+
+
+	        <button class="btn btn-lg btn-primary btn-block" id="loginButton"> Aceptar <i class="fa fa-spinner fa-spin fa-lg fa-fw"></i>
+	        </button>
+
+
+	        <br>
+	        
+	        <div id="result"></div>
+
+	        <div id="errorMsg"></div>
+
+	        <a href="" align= "center" >Olvidé mi contraseña</a>
+	        {% if error%}
+	        <h3>{{error}}</h3>
+	        {% endif %}
+	        <br>
+	        <br>
+	        
+	      </div>
+		</form>
+
+	</div>
+</body>
+</html>
